@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Basic Page Info -->
+    <meta charset="utf-8" />
+    <title>NOC - MD Dashboard</title>
+    <link rel="apple-touch-icon" href="vendors/images/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" href="vendors/images/favicon.png" />
+
+    <!-- Site favicon -->
+
+    <!-- Mobile Specific Metas -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="vendors/styles/core.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendors/styles/icon-font.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="src/plugins/datatables/css/dataTables.bootstrap4.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="src/plugins/datatables/css/responsive.bootstrap4.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="vendors/styles/style.css" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-GBZ3SGGX85"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-GBZ3SGGX85");
+    </script>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-NXZMQSS");
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body>
+    <!-- <div class="pre-loader">
+			<div class="pre-loader-box">
+				<div class="loader-logo">
+					<img src="src/images/tnhb_logo.png" alt="" />
+				</div>
+				<div class="loader-progress" id="progress_div">
+					<div class="bar" id="bar1"></div>
+				</div>
+				<div class="percent" id="percent1">0%</div>
+				<div class="loading-text">Loading...</div>
+			</div>
+		</div> -->
+
+    <div class="header">
+      <div class="header-left">
+        <div class="menu-icon bi bi-list"></div>
+        <div
+          class="search-toggle-icon bi bi-search"
+          data-toggle="header_search"
+        ></div>
+        <div class="header-search">
+          <form>
+            <div class="form-group mb-0">
+              <i class="dw dw-search2 search-icon"></i>
+              <input
+                type="text"
+                class="form-control search-input"
+                placeholder="Search Here"
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="header-right">
+        <div class="dashboard-setting user-notification">
+          <div class="dropdown">
+            <a
+              class="dropdown-toggle no-arrow"
+              href="javascript:;"
+              data-toggle="right-sidebar"
+            >
+              <i class="dw dw-settings2"></i>
+            </a>
+          </div>
+        </div>
+        <div class="user-notification">
+          <div class="dropdown">
+            <a
+              class="dropdown-toggle no-arrow"
+              href="#"
+              role="button"
+              data-toggle="dropdown"
+            >
+              <i class="icon-copy dw dw-notification"></i>
+              <span class="badge notification-active"></span>
+            </a>
+          </div>
+        </div>
+        <div class="user-info-dropdown">
+          <div class="login-menu">
+            <ul>
+              <a class="dropdown-item" href="index.html"
+                ><i class="dw dw-logout"></i> Log Out</a
+              >
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="right-sidebar">
+      <div class="sidebar-title">
+        <h3 class="weight-600 font-16 text-blue">
+          Layout Settings
+          <span class="btn-block font-weight-400 font-12"
+            >User Interface Settings</span
+          >
+        </h3>
+        <div class="close-sidebar" data-toggle="right-sidebar-close">
+          <i class="icon-copy ion-close-round"></i>
+        </div>
+      </div>
+      <div class="right-sidebar-body customscroll">
+        <div class="right-sidebar-body-content">
+          <h4 class="weight-600 font-18 pb-10">Header Background</h4>
+          <div class="sidebar-btn-group pb-30 mb-10">
+            <a
+              href="javascript:void(0);"
+              class="btn btn-outline-primary header-white active"
+              >White</a
+            >
+            <a
+              href="javascript:void(0);"
+              class="btn btn-outline-primary header-dark"
+              >Dark</a
+            >
+          </div>
+
+          <h4 class="weight-600 font-18 pb-10">Sidebar Background</h4>
+          <div class="sidebar-btn-group pb-30 mb-10">
+            <a
+              href="javascript:void(0);"
+              class="btn btn-outline-primary sidebar-light"
+              >White</a
+            >
+            <a
+              href="javascript:void(0);"
+              class="btn btn-outline-primary sidebar-dark active"
+              >Dark</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="left-side-bar">
+      <div class="brand-logo">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <!-- Uncomment the line below if you also wish to use an image logo -->
+          <img src="src/images/tnhb_logo.png" alt="" />
+          <!-- <h1>UpConstruction<span>.</span></h1> -->
+        </a>
+        <div class="close-sidebar" data-toggle="left-sidebar-close">
+          <i class="ion-close-round"></i>
+        </div>
+      </div>
+      <div class="menu-block customscroll">
+        <div class="sidebar-menu">
+          <ul id="accordion-menu">
+            <li>
+              <a href="Home.html" class="dropdown-toggle no-arrow">
+                <span class="micon bi bi-house"></span
+                ><span class="mtext">Dashboard</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="PendingApplications.html"
+                class="dropdown-toggle no-arrow"
+              >
+                <span class="micon bi bi-textarea-resize"></span
+                ><span class="mtext">Pending Applications</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="ReviewedApplications.html"
+                class="dropdown-toggle no-arrow"
+              >
+                <span class="micon bi bi-textarea-resize"></span
+                ><span class="mtext">Reviewed Applications</span>
+              </a>
+            </li>
+            <li>
+              <a href="Reverted.html" class="dropdown-toggle no-arrow">
+                <span class="micon bi bi-textarea-resize"></span
+                ><span class="mtext">Reverted Applications</span>
+              </a>
+            </li>
+            <li>
+							<a href="committe.html" class="dropdown-toggle no-arrow">
+								<span class="micon bi bi-textarea-resize"></span
+								><span class="mtext">Committee Applications</span>
+							</a>
+						</li>
+
+            <li>
+              <a href="index.html" class="dropdown-toggle no-arrow">
+                <span class="micon bi bi-power"></span
+                ><span class="mtext">Logout</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="mobile-menu-overlay"></div>
+
+    <div class="main-container">
+      <div class="pd-ltr-20 xs-pd-20-10">
+        <div class="min-height-200px">
+          <div class="page-header">
+            <div class="row">
+              <div class="col-md-6 col-sm-12">
+                <div class="title">
+                  <h4>View Applications</h4>
+                </div>
+                <nav aria-label="breadcrumb" role="navigation">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                      <a href="index.html">Dashboard</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                      View Applications
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+          </div>
+          <!-- Simple Datatable start -->
+
+          <!-- Checkbox select Datatable End -->
+          <!-- Export Datatable start -->
+          <div class="card-box mb-30">
+            <div class="pd-20">
+              <h4 class="text-blue h4">NOC Reviewed Applications</h4>
+              <br />
+
+              <a class="btn btn-outline-info" href="file:///C:/Users/Bocxy.com/Downloads/Registration%20Document.pdf" role="button" style="color:black"
+                >Pdf</a
+              >
+              <a class="btn btn-outline-info" onclick="window.print()" role="button"
+                >Print</a
+              >
+            </div>
+            <table
+              class="table hover multiple-select-row data-table-export nowrap"
+            >
+              <thead>
+                <tr>
+                  <th class="table-plus datatable-nosort">Application Id</th>
+                  <th>Name</th>
+                  <th>Type</th>
+                  <th>Purpose</th>
+                  <th>Survey No</th>
+                  <th>Court Case Details</th>
+                  <th class="datatable-nosort">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="table-plus">41265</td>
+                  <td>Lakshmi</td>
+                  <td>Petitoner</td>
+                  <td>Patta</td>
+                  <td>109</td>
+                  <td>No</td>
+                  <td>
+                    <div class="dropdown">
+                      <a
+                        class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
+                        href="#"
+                        role="button"
+                        data-toggle="dropdown"
+                      >
+                        <i class="dw dw-more"></i>
+                      </a>
+                      <div
+                        class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list"
+                      >
+                        <a class="dropdown-item" href="ReviewedForm.html"
+                          ><i class="dw dw-eye"></i> View</a
+                        >
+                        <a
+                          class="dropdown-item"
+                          href="./ReviewedTimeline.html"
+                          ><i class="dw dw-edit2"></i> Timeline</a
+                        >
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table-plus">41266</td>
+                  <td>Vijaya</td>
+                  <td>Legal Hier</td>
+                  <td>Name Change</td>
+                  <td>110</td>
+                  <td>No</td>
+                  <td>
+                    <div class="dropdown">
+                      <a
+                        class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
+                        href="#"
+                        role="button"
+                        data-toggle="dropdown"
+                      >
+                        <i class="dw dw-more"></i>
+                      </a>
+                      <div
+                        class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list"
+                      >
+                        <a class="dropdown-item" href="ReviewedForm.html"
+                          ><i class="dw dw-eye"></i> View</a
+                        >
+                        <a
+                          class="dropdown-item"
+                          href="./ReviewedTimeline.html"
+                          ><i class="dw dw-edit2"></i> Timeline</a
+                        >
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table-plus">41268</td>
+                  <td>Raja</td>
+                  <td>Petitoner</td>
+                  <td>Building Approval</td>
+                  <td>112</td>
+                  <td>No</td>
+                  <td>
+                    <div class="dropdown">
+                      <a
+                        class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
+                        href="#"
+                        role="button"
+                        data-toggle="dropdown"
+                      >
+                        <i class="dw dw-more"></i>
+                      </a>
+                      <div
+                        class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list"
+                      >
+                        <a class="dropdown-item" href="ReviewedForm.html"
+                          ><i class="dw dw-eye"></i> View</a
+                        >
+                        <a
+                          class="dropdown-item"
+                          href="./ReviewedTimeline.html"
+                          ><i class="dw dw-edit2"></i> Timeline</a
+                        >
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table-plus">41269</td>
+                  <td>LakshmiRam</td>
+                  <td>Petitoner</td>
+                  <td>Layout Approval</td>
+                  <td>113</td>
+                  <td>No</td>
+                  <td>
+                    <div class="dropdown">
+                      <a
+                        class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
+                        href="#"
+                        role="button"
+                        data-toggle="dropdown"
+                      >
+                        <i class="dw dw-more"></i>
+                      </a>
+                      <div
+                        class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list"
+                      >
+                        <a class="dropdown-item" href="ReviewedForm.html"
+                          ><i class="dw dw-eye"></i> View</a
+                        >
+                        <a
+                          class="dropdown-item"
+                          href="./ReviewedTimeline.html"
+                          ><i class="dw dw-edit2"></i> Timeline</a
+                        >
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table-plus">41269</td>
+                  <td>Gopal</td>
+                  <td>Legal Hier</td>
+                  <td>Applying for Loan</td>
+                  <td>115</td>
+                  <td>No</td>
+                  <td>
+                    <div class="dropdown">
+                      <a
+                        class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
+                        href="#"
+                        role="button"
+                        data-toggle="dropdown"
+                      >
+                        <i class="dw dw-more"></i>
+                      </a>
+                      <div
+                        class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list"
+                      >
+                        <a class="dropdown-item" href="ReviewedForm.html"
+                          ><i class="dw dw-eye"></i> View</a
+                        >
+                        <a class="dropdown-item" href="ReviewedTimeline.html"
+                          ><i class="dw dw-edit2"></i> Timeline</a
+                        >
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="table-plus">41287</td>
+                  <td>Senthil</td>
+                  <td>Petitoner</td>
+                  <td>Applying for Government Department</td>
+                  <td>234</td>
+                  <td>yes</td>
+                  <td>
+                    <div class="dropdown">
+                      <a
+                        class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
+                        href="#"
+                        role="button"
+                        data-toggle="dropdown"
+                      >
+                        <i class="dw dw-more"></i>
+                      </a>
+                      <div
+                        class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list"
+                      >
+                        <a class="dropdown-item" href="ReviewedForm.html"
+                          ><i class="dw dw-eye"></i> View</a
+                        >
+                        <a class="dropdown-item" href="ReviewedTimeline.html"
+                          ><i class="dw dw-edit2"></i> Timeline</a
+                        >
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table-plus">41260</td>
+                  <td>Lakshmi</td>
+                  <td>Petitoner</td>
+                  <td>Patta</td>
+                  <td>23456</td>
+                  <td>No</td>
+                  <td>
+                    <div class="dropdown">
+                      <a
+                        class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
+                        href="#"
+                        role="button"
+                        data-toggle="dropdown"
+                      >
+                        <i class="dw dw-more"></i>
+                      </a>
+                      <div
+                        class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list"
+                      >
+                        <a class="dropdown-item" href="ReviewedForm.html"
+                          ><i class="dw dw-eye"></i> View</a
+                        >
+                        <a class="dropdown-item" href="ReviewedTimeline.html"
+                          ><i class="dw dw-edit2"></i> Timeline</a
+                        >
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table-plus">41265</td>
+                  <td>Balaji</td>
+                  <td>Legal Hier</td>
+                  <td>Applying for Loan</td>
+                  <td>236</td>
+                  <td>No</td>
+                  <td>
+                    <div class="dropdown">
+                      <a
+                        class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
+                        href="#"
+                        role="button"
+                        data-toggle="dropdown"
+                      >
+                        <i class="dw dw-more"></i>
+                      </a>
+                      <div
+                        class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list"
+                      >
+                        <a class="dropdown-item" href="ReviewedForm.html"
+                          ><i class="dw dw-eye"></i> View</a
+                        >
+                        <a class="dropdown-item" href="ReviewedTimeline.html"
+                          ><i class="dw dw-edit2"></i> Timeline</a
+                        >
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table-plus">411345</td>
+                  <td>Vengatesan</td>
+                  <td>Petitoner</td>
+                  <td>Building Approval</td>
+                  <td>289</td>
+                  <td>No</td>
+                  <td>
+                    <div class="dropdown">
+                      <a
+                        class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
+                        href="#"
+                        role="button"
+                        data-toggle="dropdown"
+                      >
+                        <i class="dw dw-more"></i>
+                      </a>
+                      <div
+                        class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list"
+                      >
+                        <a class="dropdown-item" href="ReviewedForm.html"
+                          ><i class="dw dw-eye"></i> View</a
+                        >
+                        <a class="dropdown-item" href="ReviewedTimeline.html"
+                          ><i class="dw dw-edit2"></i> Timeline</a
+                        >
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table-plus">41256</td>
+                  <td>Munusamy</td>
+                  <td>Legal Hier</td>
+                  <td>Court Quash</td>
+                  <td>289</td>
+                  <td>Yes</td>
+                  <td>
+                    <div class="dropdown">
+                      <a
+                        class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
+                        href="#"
+                        role="button"
+                        data-toggle="dropdown"
+                      >
+                        <i class="dw dw-more"></i>
+                      </a>
+                      <div
+                        class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list"
+                      >
+                        <a class="dropdown-item" href="ReviewedForm.html"
+                          ><i class="dw dw-eye"></i> View</a
+                        >
+                        <a class="dropdown-item" href="ReviewedTimeline.html"
+                          ><i class="dw dw-edit2"></i> Timeline</a
+                        >
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table-plus">41298</td>
+                  <td>Savitha</td>
+                  <td>Petitoner</td>
+                  <td>Name change</td>
+                  <td>123</td>
+                  <td>yes</td>
+                  <td>
+                    <div class="dropdown">
+                      <a
+                        class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
+                        href="#"
+                        role="button"
+                        data-toggle="dropdown"
+                      >
+                        <i class="dw dw-more"></i>
+                      </a>
+                      <div
+                        class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list"
+                      >
+                        <a class="dropdown-item" href="ReviewedForm.html"
+                          ><i class="dw dw-eye"></i> View</a
+                        >
+                        <a class="dropdown-item" href="ReviewedTimeline.html"
+                          ><i class="dw dw-edit2"></i> Timeline</a
+                        >
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table-plus">23456</td>
+                  <td>RamKumar</td>
+                  <td>Petitoner</td>
+                  <td>Layout Approval</td>
+                  <td>564</td>
+                  <td>No</td>
+                  <td>
+                    <div class="dropdown">
+                      <a
+                        class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
+                        href="#"
+                        role="button"
+                        data-toggle="dropdown"
+                      >
+                        <i class="dw dw-more"></i>
+                      </a>
+                      <div
+                        class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list"
+                      >
+                        <a class="dropdown-item" href="ReviewedForm.html"
+                          ><i class="dw dw-eye"></i> View</a
+                        >
+                        <a class="dropdown-item" href="ReviewedTimeline.html"
+                          ><i class="dw dw-edit2"></i> Timeline</a
+                        >
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Export Datatable End -->
+        </div>
+      </div>
+    </div>
+    <!-- welcome modal start -->
+
+    <!-- welcome modal end -->
+    <!-- js -->
+    <script src="vendors/scripts/core.js"></script>
+    <script src="vendors/scripts/script.min.js"></script>
+    <script src="vendors/scripts/process.js"></script>
+    <script src="vendors/scripts/layout-settings.js"></script>
+    <script src="src/plugins/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="src/plugins/datatables/js/dataTables.bootstrap4.min.js"></script>
+    <script src="src/plugins/datatables/js/dataTables.responsive.min.js"></script>
+    <script src="src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
+    <!-- buttons for Export datatable -->
+    <script src="src/plugins/datatables/js/dataTables.buttons.min.js"></script>
+    <script src="src/plugins/datatables/js/buttons.bootstrap4.min.js"></script>
+
+    <script src="src/plugins/datatables/js/buttons.html5.min.js"></script>
+    <script src="src/plugins/datatables/js/buttons.flash.min.js"></script>
+
+    <script src="src/plugins/datatables/js/vfs_fonts.js"></script>
+    <!-- Datatable Setting js -->
+    <script src="vendors/scripts/datatable-setting.js"></script>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-NXZMQSS"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-- Code injected by live-server -->
+    <script>
+      // <![CDATA[  <-- For SVG support
+      if ("WebSocket" in window) {
+        (function () {
+          function refreshCSS() {
+            var sheets = [].slice.call(document.getElementsByTagName("link"));
+            var head = document.getElementsByTagName("head")[0];
+            for (var i = 0; i < sheets.length; ++i) {
+              var elem = sheets[i];
+              var parent = elem.parentElement || head;
+              parent.removeChild(elem);
+              var rel = elem.rel;
+              if (
+                (elem.href && typeof rel != "string") ||
+                rel.length == 0 ||
+                rel.toLowerCase() == "stylesheet"
+              ) {
+                var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, "");
+                elem.href =
+                  url +
+                  (url.indexOf("?") >= 0 ? "&" : "?") +
+                  "_cacheOverride=" +
+                  new Date().valueOf();
+              }
+              parent.appendChild(elem);
+            }
+          }
+          var protocol =
+            window.location.protocol === "http:" ? "ws://" : "wss://";
+          var address =
+            protocol + window.location.host + window.location.pathname + "/ws";
+          var socket = new WebSocket(address);
+          socket.onmessage = function (msg) {
+            if (msg.data == "reload") window.location.reload();
+            else if (msg.data == "refreshcss") refreshCSS();
+          };
+          if (
+            sessionStorage &&
+            !sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer")
+          ) {
+            console.log("Live reload enabled.");
+            sessionStorage.setItem("IsThisFirstTime_Log_From_LiveServer", true);
+          }
+        })();
+      } else {
+        console.error(
+          "Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading."
+        );
+      }
+      // ]]>
+    </script>
+  </body>
+</html>
