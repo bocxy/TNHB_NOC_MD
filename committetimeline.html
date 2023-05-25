@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Basic Page Info -->
+		<meta charset="utf-8" />
+		<title>NOC - MD Dashboard</title>
+		<link
+			rel="apple-touch-icon"
+
+			href="vendors/images/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+
+			href="vendors/images/favicon.png"
+		/>
+
+		<!-- Site favicon -->
+
+
+		<!-- Mobile Specific Metas -->
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, maximum-scale=1"
+		/>
+
+		<!-- Google Font -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="vendors/styles/core.css" />
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="vendors/styles/icon-font.min.css"
+		/>
+		<link rel="stylesheet" type="text/css" href="vendors/styles/style.css" />
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-GBZ3SGGX85"
+		></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
+
+			gtag("config", "G-GBZ3SGGX85");
+		</script>
+		<!-- Google Tag Manager -->
+		<script>
+			(function (w, d, s, l, i) {
+				w[l] = w[l] || [];
+				w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+				var f = d.getElementsByTagName(s)[0],
+					j = d.createElement(s),
+					dl = l != "dataLayer" ? "&l=" + l : "";
+				j.async = true;
+				j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+				f.parentNode.insertBefore(j, f);
+			})(window, document, "script", "dataLayer", "GTM-NXZMQSS");
+		</script>
+		<!-- End Google Tag Manager -->
+	</head>
+	<body>
+		<!-- <div class="pre-loader">
+			<div class="pre-loader-box">
+				<div class="loader-logo">
+					<img src="src/images/tnhb_logo.png" alt="" />
+				</div>
+				<div class="loader-progress" id="progress_div">
+					<div class="bar" id="bar1"></div>
+				</div>
+				<div class="percent" id="percent1">0%</div>
+				<div class="loading-text">Loading...</div>
+			</div>
+		</div> -->
+
+		<div class="header">
+			<div class="header-left">
+				<div class="menu-icon bi bi-list"></div>
+				<div
+					class="search-toggle-icon bi bi-search"
+					data-toggle="header_search"
+				></div>
+				<div class="header-search">
+					<form>
+						<div class="form-group mb-0">
+							<i class="dw dw-search2 search-icon"></i>
+							<input
+								type="text"
+								class="form-control search-input"
+								placeholder="Search Here"
+							/>
+
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="header-right">
+				<div class="dashboard-setting user-notification">
+					<div class="dropdown">
+						<a
+							class="dropdown-toggle no-arrow"
+							href="javascript:;"
+							data-toggle="right-sidebar"
+						>
+							<i class="dw dw-settings2"></i>
+						</a>
+					</div>
+				</div>
+				<div class="user-notification">
+					<div class="dropdown">
+						<a
+							class="dropdown-toggle no-arrow"
+							href="#"
+							role="button"
+							data-toggle="dropdown"
+						>
+							<i class="icon-copy dw dw-notification"></i>
+							<span class="badge notification-active"></span>
+						</a>
+
+					</div>
+				</div>
+				<div class="user-info-dropdown">
+					<div class="login-menu">
+						<ul>
+							<a class="dropdown-item" href="index.html"
+								><i class="dw dw-logout"></i> Log Out</a
+							>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="right-sidebar">
+			<div class="sidebar-title">
+				<h3 class="weight-600 font-16 text-blue">
+					Layout Settings
+					<span class="btn-block font-weight-400 font-12"
+						>User Interface Settings</span
+					>
+				</h3>
+				<div class="close-sidebar" data-toggle="right-sidebar-close">
+					<i class="icon-copy ion-close-round"></i>
+				</div>
+			</div>
+			<div class="right-sidebar-body customscroll">
+				<div class="right-sidebar-body-content">
+					<h4 class="weight-600 font-18 pb-10">Header Background</h4>
+					<div class="sidebar-btn-group pb-30 mb-10">
+						<a
+							href="javascript:void(0);"
+							class="btn btn-outline-primary header-white active"
+							>White</a
+						>
+						<a
+							href="javascript:void(0);"
+							class="btn btn-outline-primary header-dark"
+							>Dark</a
+						>
+					</div>
+
+					<h4 class="weight-600 font-18 pb-10">Sidebar Background</h4>
+					<div class="sidebar-btn-group pb-30 mb-10">
+						<a
+							href="javascript:void(0);"
+							class="btn btn-outline-primary sidebar-light"
+							>White</a
+						>
+						<a
+							href="javascript:void(0);"
+							class="btn btn-outline-primary sidebar-dark active"
+							>Dark</a
+						>
+					</div>
+
+
+
+				</div>
+			</div>
+		</div>
+
+		<div class="left-side-bar">
+			<div class="brand-logo">
+				<a href="index.html" class="logo d-flex align-items-center">
+					<!-- Uncomment the line below if you also wish to use an image logo -->
+					<img src="src/images/tnhb_logo.png" alt="">
+					<!-- <h1>UpConstruction<span>.</span></h1> -->
+				  </a>
+				<div class="close-sidebar" data-toggle="left-sidebar-close">
+					<i class="ion-close-round"></i>
+				</div>
+			</div>
+			<div class="menu-block customscroll">
+				<div class="sidebar-menu">
+					<ul id="accordion-menu">
+
+
+
+						<li>
+							<a href="Home.html" class="dropdown-toggle no-arrow">
+								<span class="micon bi bi-house"></span
+								><span class="mtext">Dashboard</span>
+							</a>
+						</li>
+						<li>
+							<a href="PendingApplications.html" class="dropdown-toggle no-arrow">
+								<span class="micon bi bi-textarea-resize"></span
+								><span class="mtext">Pending Applications</span>
+							</a>
+						</li>
+						<li>
+							<a href="ReviewedApplications.html" class="dropdown-toggle no-arrow">
+								<span class="micon bi bi-textarea-resize"></span
+								><span class="mtext">Reviewed Applications</span>
+							</a>
+						</li>
+
+						<li>
+							<a href="Reverted.html" class="dropdown-toggle no-arrow">
+								<span class="micon bi bi-textarea-resize"></span
+								><span class="mtext">Reverted Applications</span>
+							</a>
+						</li>
+						<li>
+							<a href="committe.html" class="dropdown-toggle no-arrow">
+								<span class="micon bi bi-textarea-resize"></span
+								><span class="mtext">Committee Applications</span>
+							</a>
+						</li>
+
+						<li>
+							<a href="index.html" class="dropdown-toggle no-arrow">
+								<span class="micon bi bi-power"></span
+								><span class="mtext">Logout</span>
+							</a>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="mobile-menu-overlay"></div>
+
+		<div class="main-container">
+			<div class="pd-ltr-20 xs-pd-20-10">
+				<div class="min-height-200px">
+					<div class="page-header">
+						<div class="row">
+							<div class="col-md-12 col-sm-12">
+								<div class="title">
+									<h4>Committe Reviewed Timeline</h4>
+								</div>
+								<nav aria-label="breadcrumb" role="navigation">
+									<ol class="breadcrumb">
+										<li class="breadcrumb-item">
+											<a href="index.html">Dashboard</a>
+										</li>
+										<li class="breadcrumb-item active" aria-current="page">
+											NOC Reviewed Timeline
+										</li>
+									</ol>
+								</nav>
+							</div>
+						</div>
+					</div>
+					<div class="container pd-0">
+						<div class="timeline mb-30">
+							<ul>
+								<li>
+									<div class="timeline-date">15 Oct 2022</div>
+									<div class="timeline-desc card-box">
+										<div class="pd-20">
+											<h4 class="mb-10 h4">
+												SpecialTasildar
+											</h4>
+											<p>
+												DRO received the application and verified.
+											</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="timeline-date">18 OCT 2022</div>
+									<div class="timeline-desc card-box">
+										<div class="pd-20">
+											<h4 class="mb-10 h4">
+												EE
+											</h4>
+											<p>
+												Received and verified the Application
+											</p>
+
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="timeline-date">19 OCT 2022</div>
+									<div class="timeline-desc card-box">
+									  <div class="pd-20">
+										<h4 class="mb-10 h4">Assistant</h4>
+										<p>Received and verified the Application</p>
+									  </div>
+									</div>
+								  </li>
+								  <li>
+									<div class="timeline-date">20 OCT 2022</div>
+									<div class="timeline-desc card-box">
+									  <div class="pd-20">
+										<h4 class="mb-10 h4">Superintendent</h4>
+										<p>Received and verified the Application</p>
+									  </div>
+									</div>
+								  </li>
+								<li>
+									<div class="timeline-date">21 Oct 2022</div>
+									<div class="timeline-desc card-box">
+										<div class="card card-box">
+											<!-- <img
+												class="card-img-top"
+												src="vendors/images/img2.jpg"
+												alt="Card image cap"
+											/> -->
+											<div class="card-body">
+												<h5 class="card-title weight-500">DS</h5>
+												<p class="card-text">
+													Received and verified the Application
+												</p>
+
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="timeline-date">25 Oct 2022</div>
+									<div class="timeline-desc card-box">
+										<div class="card card-box">
+											<!-- <img
+												class="card-img-top"
+												src="vendors/images/img2.jpg"
+												alt="Card image cap"
+											/> -->
+											<div class="card-body">
+												<h5 class="card-title weight-500">DRO</h5>
+												<p class="card-text">
+													Received and verified the Application
+												</p>
+
+											</div>
+										</div>
+									</div>
+								</li>
+                                <li>
+									<div class="timeline-date">28 Oct 2022</div>
+									<div class="timeline-desc card-box">
+										<div class="card card-box">
+											<!-- <img
+												class="card-img-top"
+												src="vendors/images/img2.jpg"
+												alt="Card image cap"
+											/> -->
+											<div class="card-body">
+												<h5 class="card-title weight-500">MD</h5>
+												<p class="card-text">
+													Received and sent to NOC Committee
+												</p>
+
+											</div>
+										</div>
+									</div>
+
+								</li>
+								<li>
+									<div class="timeline-date">30 Oct 2022</div>
+									<div class="timeline-desc card-box">
+										<div class="card card-box">
+											<!-- <img
+												class="card-img-top"
+												src="vendors/images/img2.jpg"
+												alt="Card image cap"
+											/> -->
+											<div class="card-body">
+												<h5 class="card-title weight-500">NOC Committee</h5>
+												<p class="card-text">
+													Received and sent to MD
+												</p>
+
+											</div>
+										</div>
+									</div>
+									<br>
+									<br>
+									<a href="committe.html" class="btn btn-outline-info"  role="button">Back</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<!-- welcome modal start -->
+
+		<!-- welcome modal end -->
+		<!-- js -->
+		<script src="vendors/scripts/core.js"></script>
+		<script src="vendors/scripts/script.min.js"></script>
+		<script src="vendors/scripts/process.js"></script>
+		<script src="vendors/scripts/layout-settings.js"></script>
+		<!-- Google Tag Manager (noscript) -->
+		<noscript
+			><iframe
+				src="https://www.googletagmanager.com/ns.html?id=GTM-NXZMQSS"
+				height="0"
+				width="0"
+				style="display: none; visibility: hidden"
+			></iframe
+		></noscript>
+		<!-- End Google Tag Manager (noscript) -->
+	</body>
+</html>

@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Basic Page Info -->
+		<meta charset="utf-8" />
+		<title>NOC - MD Dashboard</title>
+		<link
+			rel="apple-touch-icon"
+
+			href="vendors/images/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+
+			href="vendors/images/favicon.png"
+		/>
+
+		<!-- Site favicon -->
+		<!-- <link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="vendors/images/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="vendors/images/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="vendors/images/favicon-16x16.png"
+		/> -->
+
+		<!-- Mobile Specific Metas -->
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, maximum-scale=1"
+		/>
+
+		<!-- Google Font -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="vendors/styles/core.css" />
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="vendors/styles/icon-font.min.css"
+		/>
+		<link rel="stylesheet" type="text/css" href="vendors/styles/style.css" />
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-GBZ3SGGX85"
+		></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
+
+			gtag("config", "G-GBZ3SGGX85");
+		</script>
+		<!-- Google Tag Manager -->
+		<script>
+			(function (w, d, s, l, i) {
+				w[l] = w[l] || [];
+				w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+				var f = d.getElementsByTagName(s)[0],
+					j = d.createElement(s),
+					dl = l != "dataLayer" ? "&l=" + l : "";
+				j.async = true;
+				j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+				f.parentNode.insertBefore(j, f);
+			})(window, document, "script", "dataLayer", "GTM-NXZMQSS");
+		</script>
+		<!-- End Google Tag Manager -->
+	</head>
+	<body>
+		<!-- <div class="pre-loader">
+			<div class="pre-loader-box">
+				<div class="loader-logo">
+					<img src="src/images/tnhb_logo.png" alt="" />
+				</div>
+				<div class="loader-progress" id="progress_div">
+					<div class="bar" id="bar1"></div>
+				</div>
+				<div class="percent" id="percent1">0%</div>
+				<div class="loading-text">Loading...</div>
+			</div>
+		</div> -->
+
+		<div class="header">
+			<div class="header-left">
+				<div class="menu-icon bi bi-list"></div>
+				<div
+					class="search-toggle-icon bi bi-search"
+					data-toggle="header_search"
+				></div>
+				<div class="header-search">
+					<form>
+						<div class="form-group mb-0">
+							<i class="dw dw-search2 search-icon"></i>
+							<input
+								type="text"
+								class="form-control search-input"
+								placeholder="Search Here"
+							/>
+
+
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="header-right">
+				<div class="dashboard-setting user-notification">
+					<div class="dropdown">
+						<a
+							class="dropdown-toggle no-arrow"
+							href="javascript:;"
+							data-toggle="right-sidebar"
+						>
+							<i class="dw dw-settings2"></i>
+						</a>
+					</div>
+				</div>
+				<div class="user-notification">
+					<div class="dropdown">
+						<a
+							class="dropdown-toggle no-arrow"
+							href="#"
+							role="button"
+							data-toggle="dropdown"
+						>
+							<i class="icon-copy dw dw-notification"></i>
+							<span class="badge notification-active"></span>
+						</a>
+
+
+
+					</div>
+				</div>
+				<div class="user-info-dropdown">
+					<div class="login-menu">
+						<ul>
+							<a class="dropdown-item" href="index.html"
+								><i class="dw dw-logout"></i> Log Out</a
+							>
+						</ul>
+					</div>
+
+				</div>
+
+
+			</div>
+		</div>
+
+		<div class="right-sidebar">
+			<div class="sidebar-title">
+				<h3 class="weight-600 font-16 text-blue">
+					Layout Settings
+					<span class="btn-block font-weight-400 font-12"
+						>User Interface Settings</span
+					>
+				</h3>
+				<div class="close-sidebar" data-toggle="right-sidebar-close">
+					<i class="icon-copy ion-close-round"></i>
+				</div>
+			</div>
+			<div class="right-sidebar-body customscroll">
+				<div class="right-sidebar-body-content">
+					<h4 class="weight-600 font-18 pb-10">Header Background</h4>
+					<div class="sidebar-btn-group pb-30 mb-10">
+						<a
+							href="javascript:void(0);"
+							class="btn btn-outline-primary header-white active"
+							>White</a
+						>
+						<a
+							href="javascript:void(0);"
+							class="btn btn-outline-primary header-dark"
+							>Dark</a
+						>
+					</div>
+
+					<h4 class="weight-600 font-18 pb-10">Sidebar Background</h4>
+					<div class="sidebar-btn-group pb-30 mb-10">
+						<a
+							href="javascript:void(0);"
+							class="btn btn-outline-primary sidebar-light"
+							>White</a
+						>
+						<a
+							href="javascript:void(0);"
+							class="btn btn-outline-primary sidebar-dark active"
+							>Dark</a
+						>
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+
+
+		<div class="left-side-bar">
+			<div class="brand-logo">
+				<a href="index.html" class="logo d-flex align-items-center">
+					<!-- Uncomment the line below if you also wish to use an image logo -->
+					<img src="src/images/tnhb_logo.png" alt="">
+					<!-- <h1>UpConstruction<span>.</span></h1> -->
+				  </a>
+				<div class="close-sidebar" data-toggle="left-sidebar-close">
+					<i class="ion-close-round"></i>
+				</div>
+			</div>
+			<div class="menu-block customscroll">
+				<div class="sidebar-menu">
+					<ul id="accordion-menu">
+
+
+
+						<li>
+							<a href="Home.html" class="dropdown-toggle no-arrow">
+								<span class="micon bi bi-house"></span
+								><span class="mtext">Dashboard</span>
+							</a>
+						</li>
+						<li>
+							<a href="PendingApplications.html" class="dropdown-toggle no-arrow">
+								<span class="micon bi bi-textarea-resize"></span
+								><span class="mtext">Pending Applications</span>
+							</a>
+						</li>
+						<li>
+							<a href="ReviewedApplications.html" class="dropdown-toggle no-arrow">
+								<span class="micon bi bi-textarea-resize"></span
+								><span class="mtext">Reviewed Applications</span>
+							</a>
+						</li>
+						<li>
+							<a href="Reverted.html" class="dropdown-toggle no-arrow">
+								<span class="micon bi bi-textarea-resize"></span
+								><span class="mtext">Reverted Applications</span>
+							</a>
+						</li>
+						<li>
+							<a href="committe.html" class="dropdown-toggle no-arrow">
+								<span class="micon bi bi-textarea-resize"></span
+								><span class="mtext">Committee Applications</span>
+							</a>
+						</li>
+
+						<li>
+							<a href="index.html" class="dropdown-toggle no-arrow">
+								<span class="micon bi bi-power"></span
+								><span class="mtext">Logout</span>
+							</a>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="mobile-menu-overlay"></div>
+		<div class="main-container">
+			<div class="pd-ltr-20 xs-pd-20-10">
+				<div class="min-height-200px">
+					<div class="page-header">
+						<div class="row">
+							<div class="col-md-6 col-sm-12">
+								<div class="title">
+									<h4>Pending Applications</h4>
+								</div>
+								<nav aria-label="breadcrumb" role="navigation">
+									<ol class="breadcrumb">
+										<li class="breadcrumb-item">
+											<a href="index.html">Dashboard</a>
+										</li>
+										<li class="breadcrumb-item active" aria-current="page">
+											NOC Form
+										</li>
+									</ol>
+								</nav>
+							</div>
+
+						</div>
+					</div>
+					<!-- Default Basic Forms Start -->
+					<div class="pd-20 card-box mb-30">
+						<div class="clearfix">
+							<div class="pull-left">
+								<h4 class="text-blue h4">Applicant Details</h4>
+
+							</div>
+
+						</div>
+						<form>
+							<div class="form-group row">
+								<label class="col-sm-12 col-md-2 col-form-label">Application Id</label>
+								<div class="col-sm-12 col-md-10">
+									<input
+										class="form-control"
+										type="text"
+										placeholder="23456"
+										value="23456"
+									/>
+								</div>
+							</div>
+
+							<div class="form-group row">
+								<label class="col-sm-12 col-md-2 col-form-label">Application Type</label>
+								<div class="col-sm-12 col-md-10">
+									<input
+										class="form-control"
+										value="Petitoner"
+										type="email"
+									/>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-sm-12 col-md-2 col-form-label">First Name</label>
+								<div class="col-sm-12 col-md-10">
+									<input
+										class="form-control"
+										placeholder="RamKumar"
+										type="search"
+									/>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-sm-12 col-md-2 col-form-label">Last Name</label>
+								<div class="col-sm-12 col-md-10">
+									<input
+										class="form-control"
+										placeholder="Krishnan"
+										type="search"
+									/>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-sm-12 col-md-2 col-form-label">Phone Number</label>
+								<div class="col-sm-12 col-md-10">
+									<input
+										class="form-control"
+										placeholder="+91 9876543241"
+										type="tele"
+									/>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-sm-12 col-md-2 col-form-label">Email Address</label>
+								<div class="col-sm-12 col-md-10">
+									<input
+										class="form-control"
+										placeholder="ram@gmail.com"
+										type="email"
+									/>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-sm-12 col-md-2 col-form-label">Address</label>
+								<div class="col-sm-12 col-md-10">
+									<input
+										class="form-control"
+										value="No-16,Anna Nagar,Vandalur"
+										type="url"
+									/>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-sm-12 col-md-2 col-form-label">District</label>
+								<div class="col-sm-12 col-md-10">
+									<input
+										class="form-control"
+										value="Chengalpattu"
+										type="url"
+									/>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-sm-12 col-md-2 col-form-label">Pincode</label>
+								<div class="col-sm-12 col-md-10">
+									<input
+										class="form-control"
+										value="603 202"
+										type="url"
+									/>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-sm-12 col-md-2 col-form-label">Purpose</label>
+								<div class="col-sm-12 col-md-10">
+									<input
+										class="form-control"
+										value="Layout Approval"
+										type="url"
+									/>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-sm-12 col-md-2 col-form-label"
+									> Old Survey Number</label
+								>
+								<div class="col-sm-12 col-md-10">
+									<input
+										class="form-control"
+										value="564"
+										type="tel"
+									/>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-sm-12 col-md-2 col-form-label"
+									>New Survey Number</label
+								>
+								<div class="col-sm-12 col-md-10">
+									<input
+										class="form-control"
+										value="789"
+										type="tel"
+									/>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-sm-12 col-md-2 col-form-label"
+									>Patta Number</label
+								>
+								<div class="col-sm-12 col-md-10">
+									<input
+										class="form-control"
+										value="888"
+										type="tel"
+									/>
+								</div>
+							</div>
+
+							<div class="form-group row">
+								<label class="col-sm-12 col-md-2 col-form-label"
+									>Court Case</label
+								>
+								<div class="col-sm-12 col-md-10">
+									<input
+										class="form-control"
+										value="No"
+										type="tel"
+									/>
+								</div>
+							</div>
+
+							<div class="row">
+
+								<div class="card">
+									<h5 class="card-header">Registration document</h5>
+									<div class="card-body">
+
+									  <form id="formAccountDeactivation" onsubmit="return false">
+										<div class="form-check mb-3">
+
+										  <i class="icon-copy bi bi-file-earmark-pdf-fill"style=color:red> Download Attachment</i>
+										</div>
+
+									  </form>
+									</div>
+
+								  </div>
+								 &nbsp;&nbsp;&nbsp;&nbsp;
+								  <div class="card">
+									<h5 class="card-header">Parent document</h5>
+									<div class="card-body">
+
+									  <form id="formAccountDeactivation" onsubmit="return false">
+										<div class="form-check mb-3">
+
+										  <i class="icon-copy bi bi-file-earmark-pdf-fill"style=color:red> Download Attachment</i>
+										</div>
+
+									  </form>
+									</div>
+
+								  </div>
+
+							</div>
+
+						</form>
+
+					</div>
+					<!-- Default Basic Forms End -->
+
+					<!-- horizontal Basic Forms Start -->
+					<div class="row">
+					<div class="col-md-6">
+
+						<div class="card">
+							<h5 class="card-header">Special Tahsildar</h5>
+							<div class="card-body">
+							  <div class="mb-3 col-12 mb-0">
+								<div class="alert alert-warning">
+								  <h6 class="alert-heading fw-bold mb-1">Application Verified </h6>
+								  <p class="mb-0">Application id:23456 is recommended to Provide NOC.</p>
+								</div>
+							  </div>
+							  <form id="formAccountDeactivation" onsubmit="return false">
+								<div class="form-check mb-3">
+
+								  <i class="icon-copy bi bi-file-earmark-pdf-fill"style=color:red> Download Attachment</i>
+								  <br>
+								  <br>
+								  <p>Report Submitted on 12:02:59PM IST 14.10.2022</p>
+								</div>
+
+							  </form>
+							</div>
+
+						  </div>
+
+					</div>
+
+
+					<div class="col-md-6">
+
+						<div class="card">
+							<h5 class="card-header">Executive Enginner</h5>
+							<div class="card-body">
+							  <div class="mb-3 col-12 mb-0">
+								<div class="alert alert-warning">
+									<h6 class="alert-heading fw-bold mb-1">Application Verified </h6>
+									<p class="mb-0">Application id:23456 is recommended to Provide NOC.</p>
+								  </div>
+							  </div>
+							  <form id="formAccountDeactivation" onsubmit="return false">
+								<div class="form-check mb-3">
+
+								  <i class="icon-copy bi bi-file-earmark-pdf-fill"style=color:red> Download Attachment</i>
+								  <br>
+								  <br>
+								  <p>Report Submitted on 12:02:59PM IST 13.10.2022</p>
+
+								</div>
+
+							  </form>
+							</div>
+
+						  </div>
+
+					</div>
+					<br>
+					<br>
+					<br>
+					<br>
+
+					<div class="col-md-6">
+
+						<div class="card">
+							<h5 class="card-header">Assistant</h5>
+							<div class="card-body">
+							  <div class="mb-3 col-12 mb-0">
+								<div class="alert alert-warning">
+									<h6 class="alert-heading fw-bold mb-1">Application Verified </h6>
+									<p class="mb-0">Application id:23456 is recommended to Provide NOC.</p>
+								  </div>
+							  </div>
+							  <form id="formAccountDeactivation" onsubmit="return false">
+								<div class="form-check mb-3">
+
+								  <i class="icon-copy bi bi-file-earmark-pdf-fill"style=color:red> Download Attachment</i>
+								  <br>
+								  <br>
+								  <p>Report Submitted on 12:02:59PM IST 15.10.2022</p>
+								</div>
+
+							  </form>
+							</div>
+
+						  </div>
+
+					</div>
+
+					<div class="col-md-6">
+
+						<div class="card">
+							<h5 class="card-header">Superintendent</h5>
+							<div class="card-body">
+							  <div class="mb-3 col-12 mb-0">
+								<div class="alert alert-warning">
+									<h6 class="alert-heading fw-bold mb-1">Application Verified </h6>
+									<p class="mb-0">Application id:23456 is recommended to Provide NOC.</p>
+								  </div>
+							  </div>
+							  <form id="formAccountDeactivation" onsubmit="return false">
+								<div class="form-check mb-3">
+
+								  <i class="icon-copy bi bi-file-earmark-pdf-fill"style=color:red> Download Attachment</i>
+								  <br>
+								  <br>
+								  <p>Report Submitted on 12:02:59PM IST 18.10.2022</p>
+								</div>
+
+							  </form>
+							</div>
+
+						  </div>
+
+					</div>
+					<br>
+					<br>
+					<br>
+					<br>
+					<div class="col-md-6">
+
+						<div class="card">
+							<h5 class="card-header">DS</h5>
+							<div class="card-body">
+							  <div class="mb-3 col-12 mb-0">
+								<div class="alert alert-warning">
+									<h6 class="alert-heading fw-bold mb-1">Application Verified </h6>
+									<p class="mb-0">Application id:23456 is recommended to Provide NOC.</p>
+								  </div>
+							  </div>
+							  <form id="formAccountDeactivation" onsubmit="return false">
+								<div class="form-check mb-3">
+
+								  <i class="icon-copy bi bi-file-earmark-pdf-fill"style=color:red> Download Attachment</i>
+								  <br>
+								  <br>
+								  <p>Report Submitted on 12:02:59PM IST 20.10.2022</p>
+								</div>
+
+							  </form>
+							</div>
+
+						  </div>
+
+					</div>
+
+					<div class="col-md-6">
+
+						<div class="card">
+							<h5 class="card-header">DRO</h5>
+							<div class="card-body">
+							  <div class="mb-3 col-12 mb-0">
+								<div class="alert alert-warning">
+									<h6 class="alert-heading fw-bold mb-1">Application Verified </h6>
+									<p class="mb-0">Application id:23456 is recommended to Provide NOC.</p>
+								  </div>
+							  </div>
+							  <form id="formAccountDeactivation" onsubmit="return false">
+								<div class="form-check mb-3">
+
+								  <i class="icon-copy bi bi-file-earmark-pdf-fill"style=color:red> Download Attachment</i>
+								  <br>
+								  <br>
+								  <p>Report Submitted on 12:02:59PM IST 24.10.2022</p>
+								</div>
+
+							  </form>
+							</div>
+
+						  </div>
+
+					</div>
+
+				</div>
+
+					<div class="btn-list"style=alignment:right>
+						<a class="btn btn-outline-info"  href="PendingApplications.html" role="button">Back</a>
+						<a class="btn btn-outline-info"  href="#ft-demo-modal" role="button">Revert to DRO</a>
+						<a class="btn btn-outline-info"  href="register.html" role="button">Proceed</a>
+						<!-- <a class="btn btn-outline-info"  href="register.html" role="button">Revert</a> -->
+
+					</div>
+
+
+
+					</div>
+					<!-- Input Validation End -->
+				</div>
+				<div class="ft-modal" id="ft-demo-modal">
+					<div class="ft-modal-content">
+						<div class="ft-modal-header">
+						  <a class="ft-modal-close" href="#" style = "display: flex; justify-content: flex-end">[&#10006;]</a>
+						</div>
+
+						<div class="ft-modal-body">
+
+							<center> <img src="./vendors/images/icons8-approval-64.png"></center>
+
+							<center><p><strong></strong></p></center>
+
+
+						</div>
+						<div class="row mb-5">
+							<label for="inputNumber" class="col-sm-8 col-form-label" style="font-weight: bold;">Your Comments:</label>
+							<textarea class="form-control" placeholder="Your Comments will be displayed here" id="floatingTextarea" style="height: 100px;"></textarea>
+						</div>
+						<div class="row mb-5">
+							<label for="inputNumber" class="col-sm-4 col-form-label" style="font-weight: bold;">Upload Report File:</label>
+							<div class="col-sm-10">
+							  <input class="form-control" type="file" id="formFile">
+							</div>
+						  </div>
+						  <br>
+						 <center><a class="btn btn-outline-info"  href="PendingApplications.html" role="button">Send</a></center>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- welcome modal start -->
+
+		<!-- welcome modal end -->
+		<!-- js -->
+		<script src="vendors/scripts/core.js"></script>
+		<script src="vendors/scripts/script.min.js"></script>
+		<script src="vendors/scripts/process.js"></script>
+		<script src="vendors/scripts/layout-settings.js"></script>
+
+		<script>
+			// Get the modal
+			var modal = document.getElementById('id01');
+
+			// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function(event) {
+			  if (event.target == modal) {
+				modal.style.display = "none";
+			  }
+			}
+			</script>
+		<!-- Google Tag Manager (noscript) -->
+		<noscript
+			><iframe
+				src="https://www.googletagmanager.com/ns.html?id=GTM-NXZMQSS"
+				height="0"
+				width="0"
+				style="display: none; visibility: hidden"
+			></iframe
+		></noscript>
+		<!-- End Google Tag Manager (noscript) -->
+<style>
+
+.ft-modal {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	opacity: 0;
+        z-index: 9999;
+        overflow: auto;
+	position: fixed;
+        visibility: hidden;
+	margin-top: -250px;
+	background: rgba(0,0,0,.8);
+
+	transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-webkit-transition: all .3s ease-in-out;
+}
+
+.ft-modal:target {
+	opacity: 1;
+	margin-top: 0px;
+	visibility: visible;
+}
+
+.ft-modal-content {
+	width: 70%;
+    padding: 25px;
+	background: #FFF;
+	max-width: 600px;
+    margin: 70px auto;
+	position: relative;
+	border-radius: 8px;
+	box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+}
+</style>
+
+
+
+	</body>
+</html>

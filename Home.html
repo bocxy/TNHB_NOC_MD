@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Basic Page Info -->
+		<meta charset="utf-8" />
+		<title>NOC - MD Dashboard</title>
+		<link
+			rel="apple-touch-icon"
+
+			href="vendors/images/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+
+			href="vendors/images/favicon.png"
+		/>
+
+		<!-- Site favicon -->
+		<!-- <link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="vendors/images/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="vendors/images/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="vendors/images/favicon-16x16.png"
+		/> -->
+
+		<!-- Mobile Specific Metas -->
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, maximum-scale=1"
+		/>
+
+		<!-- Google Font -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="vendors/styles/core.css" />
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="vendors/styles/icon-font.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="src/plugins/jvectormap/jquery-jvectormap-2.0.3.css"
+		/>
+		<link rel="stylesheet" type="text/css" href="vendors/styles/style.css" />
+
+		<link href="vendors/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-GBZ3SGGX85"
+		></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
+
+			gtag("config", "G-GBZ3SGGX85");
+		</script>
+		<!-- Google Tag Manager -->
+		<script>
+			(function (w, d, s, l, i) {
+				w[l] = w[l] || [];
+				w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+				var f = d.getElementsByTagName(s)[0],
+					j = d.createElement(s),
+					dl = l != "dataLayer" ? "&l=" + l : "";
+				j.async = true;
+				j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+				f.parentNode.insertBefore(j, f);
+			})(window, document, "script", "dataLayer", "GTM-NXZMQSS");
+		</script>
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+		<!-- End Google Tag Manager -->
+	</head>
+	<body>
+		<!-- <div class="pre-loader">
+			<div class="pre-loader-box">
+				<div class="loader-logo">
+					<img src="src/images/tnhb_logo.png" alt="" />
+				</div>
+				<div class="loader-progress" id="progress_div">
+					<div class="bar" id="bar1"></div>
+				</div>
+				<div class="percent" id="percent1">0%</div>
+				<div class="loading-text">Loading...</div>
+			</div>
+		</div> -->
+
+		<div class="header">
+			<div class="header-left">
+				<div class="menu-icon bi bi-list"></div>
+				<div
+					class="search-toggle-icon bi bi-search"
+					data-toggle="header_search"
+				></div>
+				<div class="header-search">
+					<form>
+						<div class="form-group mb-0">
+							<i class="dw dw-search2 search-icon"></i>
+							<input
+								type="text"
+								class="form-control search-input"
+								placeholder="Search Here"
+							/>
+
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="header-right">
+				<div class="dashboard-setting user-notification">
+					<div class="dropdown">
+						<a
+							class="dropdown-toggle no-arrow"
+							href="javascript:;"
+							data-toggle="right-sidebar"
+						>
+							<i class="dw dw-settings2"></i>
+						</a>
+					</div>
+				</div>
+				<div class="user-notification">
+					<div class="dropdown">
+						<a
+							class="dropdown-toggle no-arrow"
+							href="#"
+							role="button"
+							data-toggle="dropdown"
+						>
+							<i class="icon-copy dw dw-notification"></i>
+							<span class="badge notification-active"></span>
+						</a>
+
+					</div>
+				</div>
+				<div class="user-info-dropdown">
+					<div class="login-menu">
+						<ul>
+							<a class="dropdown-item" href="index.html"
+								><i class="dw dw-logout"></i> Log Out</a
+							>
+						</ul>
+					</div>
+
+				</div>
+				<!--  -->
+			</div>
+		</div>
+
+		<div class="right-sidebar">
+			<div class="sidebar-title">
+				<h3 class="weight-600 font-16 text-blue">
+					Layout Settings
+					<span class="btn-block font-weight-400 font-12"
+						>User Interface Settings</span
+					>
+				</h3>
+				<div class="close-sidebar" data-toggle="right-sidebar-close">
+					<i class="icon-copy ion-close-round"></i>
+				</div>
+			</div>
+			<div class="right-sidebar-body customscroll">
+				<div class="right-sidebar-body-content">
+					<h4 class="weight-600 font-18 pb-10">Header Background</h4>
+					<div class="sidebar-btn-group pb-30 mb-10">
+						<a
+							href="javascript:void(0);"
+							class="btn btn-outline-primary header-white active"
+							>White</a
+						>
+						<a
+							href="javascript:void(0);"
+							class="btn btn-outline-primary header-dark"
+							>Dark</a
+						>
+					</div>
+
+					<h4 class="weight-600 font-18 pb-10">Sidebar Background</h4>
+					<div class="sidebar-btn-group pb-30 mb-10">
+						<a
+							href="javascript:void(0);"
+							class="btn btn-outline-primary sidebar-light"
+							>White</a
+						>
+						<a
+							href="javascript:void(0);"
+							class="btn btn-outline-primary sidebar-dark active"
+							>Dark</a
+						>
+					</div>
+
+
+
+
+				</div>
+			</div>
+		</div>
+
+		<div class="left-side-bar">
+			<div class="brand-logo">
+				<a href="index.html" class="logo d-flex align-items-center">
+					<!-- Uncomment the line below if you also wish to use an image logo -->
+					<img src="src/images/tnhb_logo.png" alt="">
+					<!-- <h1>UpConstruction<span>.</span></h1> -->
+				  </a>
+				<div class="close-sidebar" data-toggle="left-sidebar-close">
+					<i class="ion-close-round"></i>
+				</div>
+			</div>
+			<div class="menu-block customscroll">
+				<div class="sidebar-menu">
+					<ul id="accordion-menu">
+
+
+
+						<li>
+							<a href="Home.html" class="dropdown-toggle no-arrow">
+								<span class="micon bi bi-house"></span
+								><span class="mtext">Dashboard</span>
+							</a>
+						</li>
+						<li>
+							<a href="PendingApplications.html" class="dropdown-toggle no-arrow">
+								<span class="micon bi bi-textarea-resize"></span
+								><span class="mtext">Pending Applications</span>
+							</a>
+						</li>
+						<li>
+							<a href="ReviewedApplications.html" class="dropdown-toggle no-arrow">
+								<span class="micon bi bi-textarea-resize"></span
+								><span class="mtext">Reviewed Applications</span>
+							</a>
+						</li>
+						<li>
+							<a href="Reverted.html" class="dropdown-toggle no-arrow">
+								<span class="micon bi bi-textarea-resize"></span
+								><span class="mtext">Reverted Applications</span>
+							</a>
+						</li>
+						<li>
+							<a href="committe.html" class="dropdown-toggle no-arrow">
+								<span class="micon bi bi-textarea-resize"></span
+								><span class="mtext">Committee Applications</span>
+							</a>
+						</li>
+
+						<li>
+							<a href="index.html" class="dropdown-toggle no-arrow">
+								<span class="micon bi bi-power"></span
+								><span class="mtext">Logout</span>
+								<i ></i>
+
+							</a>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="mobile-menu-overlay"></div>
+
+		<div class="main-container">
+			<div class="xs-pd-20-10 pd-ltr-20">
+				<div class="page-header">
+					<div class="row">
+						<div class="col-md-6 col-sm-12">
+							<div class="title">
+								<h4>Dashboard</h4>
+							</div>
+							<nav aria-label="breadcrumb" role="navigation">
+								<ol class="breadcrumb">
+									<li class="breadcrumb-item"><a href="index.html"></a></li>
+
+								</ol>
+							</nav>
+						</div>
+
+					</div>
+				</div>
+				<div class="row clearfix progress-box">
+
+
+
+					<div class="col-lg-3 col-md-6 col-sm-12 mb-30">
+
+						<div class="card-box pd-30 height-100-p">
+							<h4 class="h4 text-blue">Total Pending</h4>
+							<div class="d-flex align-items-center">
+								<style>
+									.circle {
+									  width: 200px;
+									  height: 200px;
+									  border-radius: 50%;
+									  background-color: #f1f1f1;
+									  display: flex;
+									  justify-content: center;
+									  align-items: center;
+									  font-size: 24px;
+									  font-weight: bold;
+									}
+								  </style>
+								  <div class="circle">
+									<!-- Replace "Your Number" with the actual number you want to display -->
+									<span id="number">400</span>
+								  </div>
+							  </div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6 col-sm-12 mb-30">
+						<div class="card-box pd-30 height-100-p">
+							<h4 class="h4 text-blue">Action Pending</h4>
+
+								<div class="d-flex align-items-center">
+									<style>
+										.circle {
+										  width: 200px;
+										  height: 200px;
+										  border-radius: 50%;
+										  background-color: #f1f1f1;
+										  display: flex;
+										  justify-content: center;
+										  align-items: center;
+										  font-size: 24px;
+										  font-weight: bold;
+										}
+									  </style>
+									  <div class="circle">
+										<!-- Replace "Your Number" with the actual number you want to display -->
+										<span id="number">100</span>
+									  </div>
+								  </div>
+
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6 col-sm-12 mb-30">
+						<div class="card-box pd-30 height-100-p">
+							<h4 class="h4 text-blue">Upcoming Review</h4>
+								<div class="d-flex align-items-center">
+									<style>
+										.circle {
+										  width: 200px;
+										  height: 200px;
+										  border-radius: 50%;
+										  background-color: #f1f1f1;
+										  display: flex;
+										  justify-content: center;
+										  align-items: center;
+										  font-size: 24px;
+										  font-weight: bold;
+										}
+									  </style>
+									  <div class="circle">
+										<!-- Replace "Your Number" with the actual number you want to display -->
+										<span id="number">200</span>
+									  </div>
+								  </div>
+
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6 col-sm-12 mb-30">
+						<div class="card-box pd-30 height-100-p">
+							<h4 class="h4 text-blue">NOC issued</h4>
+							<div class="d-flex align-items-center">
+								<style>
+									.circle {
+									  width: 200px;
+									  height: 200px;
+									  border-radius: 50%;
+									  background-color: #f1f1f1;
+									  display: flex;
+									  justify-content: center;
+									  align-items: center;
+									  font-size: 24px;
+									  font-weight: bold;
+									}
+								  </style>
+								  <div class="circle">
+									<!-- Replace "Your Number" with the actual number you want to display -->
+									<span id="number">500</span>
+								  </div>
+							  </div>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-md-6 col-sm-12 mb-30">
+						<div class="card-box pd-30 height-100-p">
+							<h4 class="h4 text-blue">Application Status | This year</h4>
+							<div id="trafficChart3" style="min-height: 400px;" class="echart"></div>
+
+	   <script>
+		document.addEventListener("DOMContentLoaded", () => {
+		  echarts.init(document.querySelector("#trafficChart3")).setOption({
+			tooltip: {
+			  trigger: 'item'
+			},
+			legend: {
+			  top: '5%',
+			  left: 'center'
+			},
+			series: [{
+			  name: 'Applications',
+			  type: 'pie',
+			  radius: ['40%', '70%'],
+			  avoidLabelOverlap: false,
+			  label: {
+				show: false,
+				position: 'center'
+			  },
+			  emphasis: {
+				label: {
+				  show: true,
+				  fontSize: '18',
+				  fontWeight: 'bold'
+				}
+			  },
+			  labelLine: {
+				show: false
+			  },
+			  data: [{
+				  value: 500,
+				  name: 'NOC Issued'
+				},
+				{
+				  value: 100,
+				  name: 'NOC Rejected'
+				},
+				{
+				  value: 0,
+				  name: '',
+
+				},
+				{
+				  value: 400,
+				  name: 'NOC Pending'
+				},
+			  ]
+			}]
+		  });
+		});
+	  </script>
+
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6 col-sm-12 mb-30">
+						<div class="card-box pd-30 height-100-p">
+							<h4 class="h4 text-blue">Application Status | Total so far</h4>
+							<div id="trafficChart4" style="min-height: 400px;" class="echart"></div>
+
+	   <script>
+		document.addEventListener("DOMContentLoaded", () => {
+		  echarts.init(document.querySelector("#trafficChart4")).setOption({
+			tooltip: {
+			  trigger: 'item'
+			},
+			legend: {
+			  top: '5%',
+			  left: 'center'
+			},
+			series: [{
+			  name: 'Applications',
+			  type: 'pie',
+			  radius: ['40%', '70%'],
+			  avoidLabelOverlap: false,
+			  label: {
+				show: false,
+				position: 'center'
+			  },
+			  emphasis: {
+				label: {
+				  show: true,
+				  fontSize: '18',
+				  fontWeight: 'bold'
+				}
+			  },
+			  labelLine: {
+				show: false
+			  },
+			  data: [{
+				  value: 1000,
+				  name: 'NOC Issued'
+				},
+				{
+				  value: 500,
+				  name: 'NOC Rejected'
+				},
+				{
+				  value: 0,
+				  name: '',
+
+				},
+				{
+				  value: 400,
+				  name: 'NOC Pending'
+				},
+			  ]
+			}]
+		  });
+		});
+	  </script>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6 col-sm-12 mb-30">
+						<div class="card-box pd-30 height-100-p">
+							<h4 class="h4 text-blue">Applicant Type |  &nbsp;&nbsp;
+								This Year</h4>
+							<div id="trafficChart6" style="min-height: 400px;" class="echart"></div>
+
+	   <script>
+		document.addEventListener("DOMContentLoaded", () => {
+		  echarts.init(document.querySelector("#trafficChart6")).setOption({
+			tooltip: {
+			  trigger: 'item'
+			},
+			legend: {
+			  top: '5%',
+			  left: 'center'
+			},
+			series: [{
+			  name: 'Applications',
+			  type: 'pie',
+			  radius: ['40%', '70%'],
+			  avoidLabelOverlap: false,
+			  label: {
+				show: false,
+				position: 'center'
+			  },
+			  emphasis: {
+				label: {
+				  show: true,
+				  fontSize: '18',
+				  fontWeight: 'bold'
+				}
+			  },
+			  labelLine: {
+				show: false
+			  },
+			  data: [{
+				  value: 800,
+				  name: 'Legal Heir'
+				},
+				{
+				  value: 150,
+				  name: 'Land Owner'
+				},
+				{
+				  value: 0,
+				  name: '',
+
+				},
+				{
+				  value: 50,
+				  name: 'Subsequent Purchaser'
+				},
+			  ]
+			}]
+		  });
+		});
+	  </script>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6 col-sm-12 mb-30">
+						<div class="card-box pd-30 height-100-p">
+							<h4 class="h4 text-blue">Applicant Type | Total so far</h4>
+							<div id="trafficChart5" style="min-height: 400px;" class="echart"></div>
+
+	   <script>
+		document.addEventListener("DOMContentLoaded", () => {
+		  echarts.init(document.querySelector("#trafficChart5")).setOption({
+			tooltip: {
+			  trigger: 'item'
+			},
+			legend: {
+			  top: '5%',
+			  left: 'center'
+			},
+			series: [{
+			  name: 'Applications',
+			  type: 'pie',
+			  radius: ['40%', '70%'],
+			  avoidLabelOverlap: false,
+			  label: {
+				show: false,
+				position: 'center'
+			  },
+			  emphasis: {
+				label: {
+				  show: true,
+				  fontSize: '18',
+				  fontWeight: 'bold'
+				}
+			  },
+			  labelLine: {
+				show: false
+			  },
+			  data: [{
+				  value: 1200,
+				  name: 'Legal Heir'
+				},
+				{
+				  value: 500,
+				  name: 'Land Owner'
+				},
+				{
+				  value: 0,
+				  name: '',
+
+				},
+				{
+				  value: 100,
+				  name: 'Subsequent Purchaser'
+				},
+			  ]
+			}]
+		  });
+		});
+	  </script>
+						</div>
+					</div>
+
+				</div>
+
+		<!-- welcome modal start -->
+
+
+
+		<!-- welcome modal end -->
+		<!-- js -->
+		<script src="vendors/scripts/core.js"></script>
+		<script src="vendors/scripts/script.min.js"></script>
+		<script src="vendors/scripts/process.js"></script>
+		<script src="vendors/scripts/layout-settings.js"></script>
+		<script src="src/plugins/jQuery-Knob-master/jquery.knob.min.js"></script>
+		<script src="src/plugins/highcharts-6.0.7/code/highcharts.js"></script>
+		<script src="src/plugins/highcharts-6.0.7/code/highcharts-more.js"></script>
+		<script src="src/plugins/jvectormap/jquery-jvectormap-2.0.3.min.js"></script>
+		<script src="src/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+		<script src="src/plugins/apexcharts/apexcharts.min.js"></script>
+		<script src="vendors/scripts/apexcharts-setting.js"></script>
+		<script src="vendors/scripts/dashboard2.js"></script>
+		<!-- Google Tag Manager (noscript) -->
+
+		<!-- End Google Tag Manager (noscript) -->
+		<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+		<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+		<script>
+			var pieChartValues = [{
+		  y: 39.16,
+		  exploded: true,
+		  indexLabel: "Viwed",
+		  color: "#1f77b4"
+		}, {
+		  y: 2.92,
+		  indexLabel: "Pending",
+		  color: "#f7b6d2"
+		}];
+		renderPieChart(pieChartValues);
+
+		function renderPieChart(values) {
+
+		  var chart = new CanvasJS.Chart("pieChart", {
+			backgroundColor: "white",
+			colorSet: "colorSet2",
+
+			title: {
+
+			  fontFamily: "Verdana",
+			  fontSize: 25,
+			  fontWeight: "normal",
+			},
+			animationEnabled: true,
+			data: [{
+			  indexLabelFontSize: 10,
+			  indexLabelFontFamily: "Monospace",
+			  indexLabelFontColor: "darkgrey",
+			  indexLabelLineColor: "darkgrey",
+			  indexLabelPlacement: "outside",
+			  type: "pie",
+			  showInLegend: false,
+			  toolTipContent: "<strong>#percent%</strong>",
+			  dataPoints: values
+			}]
+		  });
+		  chart.render();
+		}
+
+		</script>
+		<script>
+			var pieChartValues = [{
+		  y: 39.16,
+		  exploded: true,
+		  indexLabel: "Win",
+		  color: "#1f77b4"
+		}, {
+		  y: 2.92,
+		  indexLabel: "Loss",
+		  color: "#f7b6d2"
+		}];
+		renderPieChart(pieChartValues);
+
+		function renderPieChart(values) {
+
+		  var chart = new CanvasJS.Chart("pieChart1", {
+			backgroundColor: "white",
+			colorSet: "colorSet2",
+
+			title: {
+
+			  fontFamily: "Verdana",
+			  fontSize: 25,
+			  fontWeight: "normal",
+			},
+			animationEnabled: true,
+			data: [{
+			  indexLabelFontSize: 10,
+			  indexLabelFontFamily: "Monospace",
+			  indexLabelFontColor: "darkgrey",
+			  indexLabelLineColor: "darkgrey",
+			  indexLabelPlacement: "outside",
+			  type: "pie",
+			  showInLegend: false,
+			  toolTipContent: "<strong>#percent%</strong>",
+			  dataPoints: values
+			}]
+		  });
+		  chart.render();
+		}
+
+		</script>
+		<script>
+			var pieChartValues = [{
+		  y: 39.16,
+		  exploded: true,
+		  indexLabel: "Win",
+		  color: "#1f77b4"
+		}, {
+		  y: 2.92,
+		  indexLabel: "Loss",
+		  color: "#f7b6d2"
+		}];
+		renderPieChart(pieChartValues);
+
+		function renderPieChart(values) {
+
+		  var chart = new CanvasJS.Chart("pieChart2", {
+			backgroundColor: "white",
+			colorSet: "colorSet2",
+
+			title: {
+
+			  fontFamily: "Verdana",
+			  fontSize: 25,
+			  fontWeight: "normal",
+			},
+			animationEnabled: true,
+			data: [{
+			  indexLabelFontSize: 10,
+			  indexLabelFontFamily: "Monospace",
+			  indexLabelFontColor: "darkgrey",
+			  indexLabelLineColor: "darkgrey",
+			  indexLabelPlacement: "outside",
+			  type: "pie",
+			  showInLegend: false,
+			  toolTipContent: "<strong>#percent%</strong>",
+			  dataPoints: values
+			}]
+		  });
+		  chart.render();
+		}
+
+		</script>
+
+<script src="vendors/echarts/echarts.min.js"></script>
+						</body>
+</html>
